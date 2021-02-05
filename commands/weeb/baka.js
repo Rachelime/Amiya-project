@@ -7,9 +7,10 @@ module.exports = {
   cooldown: 3,
   async execute(message, args){
     
-    	  if(message.mentions.users.size){
+     taggedUser = message.author
+ 	  if(message.mentions.users.size > 0){
 	  	taggedUser = message.mentions.users.first()
-
+     }
     let baka = await neki.sfw.baka()
        const embed = new Discord.MessageEmbed()
             .setColor('RANDOM')
@@ -19,18 +20,8 @@ module.exports = {
             .setFooter('Nekos.life | ' +  `${Date.now() - message.createdTimestamp}` + 'ms' , 'https://avatars2.githubusercontent.com/u/34457007?s=200&v=4');
 
             message.channel.send(embed);
-        }
-        else{
-              let baka = await neki.sfw.baka()
-       const embed = new Discord.MessageEmbed()
-            .setColor('RANDOM')
-            .setDescription(`Hey ${message.author.username} BAKA!`)
-            .setImage(baka.url)
-            .setTimestamp()
-            .setFooter('Nekos.life | ' +  `${Date.now() - message.createdTimestamp}` + 'ms' , 'https://avatars2.githubusercontent.com/u/34457007?s=200&v=4');
-
-            message.channel.send(embed);
-        }
+        
+     
   
   }
 }
