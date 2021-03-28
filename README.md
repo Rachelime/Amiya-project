@@ -1,2 +1,2 @@
 # Amiya-project
-A multipurpose discord bot
+Fun Again 
